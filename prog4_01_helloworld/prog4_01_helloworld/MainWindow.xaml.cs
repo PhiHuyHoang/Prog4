@@ -24,5 +24,41 @@ namespace prog4_01_helloworld
         {
             InitializeComponent();
         }
+
+        private void CalculateClick(object sender, RoutedEventArgs e)
+        {
+            string s = string.Empty;
+            try
+            {
+                double income = double.Parse(txtIncome.Text);
+                double taxPct = double.Parse(txtPct.Text);
+                double taxPrepaid = double.Parse(txtPrepaid.Text);
+
+                double result = income * taxPct / 100 - taxPrepaid;
+                if(result > 0)
+                {
+                    s = "MUST PAY " + result;
+                }
+                else if(result < 0)
+                {
+                    s = "OVERPAID " + result;
+                }
+                else
+                {
+                    s = "ALL IS OK";
+                }
+
+            }
+            catch(FormatException ex)
+            {
+                s = "ERROR: NUM A NUMBER";
+            }
+            catch(OverflowException ex)
+            {
+                s = "ERROR: TOO BIG NUMBER";
+            }
+            Title = s;
+            MessageBox.Show(s);
+        }
     }
 }
