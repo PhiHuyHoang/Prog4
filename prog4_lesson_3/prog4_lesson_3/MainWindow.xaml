@@ -1,0 +1,22 @@
+﻿<Window x:Class="prog4_lesson_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prog4_lesson_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+        <Button Content="ADD" Click="AddClick"  HorizontalAlignment="Left" Margin="19,29,0,0" VerticalAlignment="Top" Width="95" Height="33"/>
+        <Button Content="MODIFY" Click="ModClick" HorizontalAlignment="Left" Margin="139,29,0,0" VerticalAlignment="Top" Width="95" Height="33"/>
+        <Button Content="DELETE" Click="DelClick" HorizontalAlignment="Left" Margin="257,29,0,0" VerticalAlignment="Top" Width="95" Height="33"/>
+        <Button Content="DELETE ALL" Click="ClearClick" HorizontalAlignment="Left" Margin="375,29,0,0" VerticalAlignment="Top" Width="95" Height="33"/>
+        <ListBox x:Name="myListBox" HorizontalAlignment="Left" Height="310" VerticalAlignment="Top" Width="451" Margin="19,84,0,0"/>
+<!--
+        1. Store: strings, Display: strings
+        2. Store: objects, Display: strings
+        3. WPF ==> Store: Objects, Display: templates
+        ControlTemplate + ItemsPanelTemplate + ItemTemplate
+        -->
+    </Grid>
+</Window>
