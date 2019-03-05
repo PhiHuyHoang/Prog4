@@ -1,0 +1,22 @@
+﻿<Window x:Class="prog4_lesson5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prog4_lesson5.VM"
+        mc:Ignorable="d"
+        Title="{Binding Path=CurrentDirectory}" Height="450" Width="315"
+        d:DataContext="{d:DesignInstance Type={x:Type local:ViewModel},
+            IsDesignTimeCreatable=False}" Loaded="Window_Loaded">
+    <Grid>
+        <!--Command -> Button 
+                    -> Interaction trigger
+        -->
+        <ListBox ItemsSource="{Binding Path=Entries}"
+                SelectedItem="{Binding Path=SelectedEntry}"
+            HorizontalAlignment="Left" Height="348" VerticalAlignment="Top" Width="307"
+                 MouseDoubleClick="ListBox_MouseDoubleClick"/>
+        <Label Content="{Binding Path=SelectedEntry.Name}" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Width="46"/>
+        <Button Command="{Binding Path=SelectEntryCommand}" Content="Open" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="222,353,0,0" Height="23"/>
+    </Grid>
+</Window>
